@@ -4,8 +4,49 @@
 import javax.swing.JOptionPane;
 
 
-public class EX25{
+public class EX30{
     public static void main(String args[]){
-        double horaInicio, horaFinal, 
+        double horaInicial, horaFinal, minutoInicial,minutoFinal,hH,mM;
+       
+        horaInicial=Double.parseDouble(JOptionPane.showInputDialog("Informe a hora iniial"));
+        horaFinal=Double.parseDouble(JOptionPane.showInputDialog("Informe a hora final"));
+        minutoInicial=Double.parseDouble(JOptionPane.showInputDialog("Informe o minuto inicial"));
+        minutoFinal=Double.parseDouble(JOptionPane.showInputDialog("Informe o minuto final"));
+        
+        
+        if(horaFinal> horaInicial && minutoFinal>minutoInicial){
+            
+           hH = (horaFinal-horaInicial);
+           mM=(minutoFinal-minutoInicial);
+        }
+        
+        else if(horaFinal<horaInicial && minutoFinal<minutoInicial){
+            
+            hH=(24+horaInicial+(horaFinal));
+            mM=(60-minutoInicial+(minutoFinal));
+            
+        }
+
+        else if(horaFinal>horaInicial && minutoFinal<minutoInicial){
+            hH = (horaFinal-horaInicial);
+            mM=(60+minutoInicial+(minutoFinal));
+            
+        }
+        
+        else{
+            hH=(24+horaInicial+(horaFinal));
+            mM=(minutoFinal-minutoInicial);
+        }
+        
+        if(mM>60){
+            hH=+1;
+            mM=mM-60;
+        }
+        
+        else{
+            
+        }
+        
+        JOptionPane.showMessageDialog(null,"Ao fim do jogo computou-se " + hH + " e " + mM);
+        }
     }
-}
