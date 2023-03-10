@@ -1,0 +1,60 @@
+ *32.	32.	Receba um número inteiro. Calcule e mostre o seu fatorial
+ * @author FATEC ZONA LESTE
+ */
+import javax.swing.JOptionPane;
+public class ex32_function {
+    public static void main (String args[]){
+        
+        int opc=0, n=0;
+        
+        while(opc != 9){
+            opc= Integer.parseInt(JOptionPane.showInputDialog("Informe uma opção :  \n"
+                    + "1 - Digite um número. \n"
+                    + "2- Mostrar fatorial. \n"
+                    + "9- sair do programa"));
+            
+            switch (opc){
+                case 1:
+                n=coleteNumero(n);
+                break;
+                
+                case 2:
+                    mostrarFatorial(n);
+                 break;
+                 
+                case 9:
+                    JOptionPane.showMessageDialog(null, "Fim");
+                break;
+                
+                default: 
+                    
+                    JOptionPane.showMessageDialog(null, "Valor inserido é inválido");
+   
+            }
+            
+        }
+    }
+    
+   public static int coleteNumero(int numeroColetado){
+       numeroColetado= Integer.parseInt(JOptionPane.showInputDialog("Digite um número"));
+       
+       return numeroColetado;
+
+   }
+   
+   public static void mostrarFatorial(int fatorialMostrado){
+      int fat=1;
+      for (int i = fatorialMostrado; i>0; i--){  // i recebe n e enquanto, enquanto i for maior que 0, i reduz;
+         fat= fat*i;
+         
+      }
+      
+      
+      JOptionPane.showMessageDialog(null, fat);
+      
+   }
+    
+}
+
+
+
